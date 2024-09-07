@@ -18,7 +18,7 @@ async function checkWeateher(city){
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 
-    document.querySelector(".weather-icon").src = "/main/images/"+data.weather[0].main+".png";
+    document.querySelector(".weather-icon").src = "main/images/"+data.weather[0].main+".png";
 }
 checkWeateher("pamulang");
 
