@@ -18,7 +18,18 @@ async function checkWeateher(city){
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 
-    document.querySelector(".weather-icon").src = "images/clear.png";
+    if(data.weather[0].main == "Clear")
+        document.querySelector(".weather-icon").src = "images/clear.png";
+    else if(data.weather[0].main == "Drizzle")
+        document.querySelector(".weather-icon").src = "images/drizzle.png";
+    else if(data.weather[0].main == "Mist")
+        document.querySelector(".weather-icon").src = "images/mist.png";
+    else if(data.weather[0].main == "Rain")
+        document.querySelector(".weather-icon").src = "images/rain.png";
+    else if(data.weather[0].main == "Snow")
+        document.querySelector(".weather-icon").src = "images/snow.png";
+    else
+        document.querySelector(".weather-icon").src = "images/clouds.png";
 }
 checkWeateher("pamulang");
 
